@@ -117,19 +117,10 @@ function isOccupied(x, y) {
     return false;
 }
 
-// Fonction pour gérer les touches du clavier
-document.addEventListener('keydown', function(event) {
-    if (gameOver) return;
-    
-    if (event.key === 'ArrowUp' && direction !== 'down') direction = 'up';
-    if (event.key === 'ArrowDown' && direction !== 'up') direction = 'down';
-    if (event.key === 'ArrowLeft' && direction !== 'right') direction = 'left';
-    if (event.key === 'ArrowRight' && direction !== 'left') direction = 'right';
-});
-
 // Fonction pour mettre à jour le jeu
 function updateGame() {
     if (gameOver) {
+        clearInterval(gameIntervalID); // Arrête l'intervalle de mise à jour
         alert('Game Over! Votre score est ' + score);
         return;
     }
@@ -142,6 +133,7 @@ function updateGame() {
     moveSnake(); // Déplace le serpent
 }
 
+
 // Fonction pour redémarrer le jeu
 function restartGame() {
     snake = [{x: 150, y: 150}];
@@ -153,6 +145,21 @@ function restartGame() {
     gameInterval = document.getElementById('speed').value;
     gameIntervalID = setInterval(updateGame, gameInterval);
 }
+
+// Gestion des flèches de direction sur l'écran
+document.getElementById('upBtn').addEventListener('click', function() {
+    if (direction !== 'down') direction = 'up';
+});
+document.getElementById('downBtn').addEventListener('click', function() {
+    if (direction !== 'up') direction = 'down';
+});
+document.getElementById('leftBtn').addEventListener('click', function() {
+    if (direction !== 'right') direction = 'left';
+});
+document.getElementById('rightBtn').addEventListener('click', function() {
+    if (direction !== 'left') direction = 'right';
+});
+
 
 // Mise à jour de la vitesse du jeu
 document.getElementById('speed').addEventListener('change', function() {
