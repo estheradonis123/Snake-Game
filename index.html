@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeu du Serpent</title>
+    <link rel="stylesheet" href="jeux.css">
+</head>
+<body>
+    <div id="game-container">
+        <canvas id="gameCanvas" width="400" height="400"></canvas>
+        <div id="gameInfo">
+            <p>Score: <span id="score">0</span></p>
+            <label for="speed">Vitesse: </label>
+            <select id="speed">
+                <option value="100">Lent</option>
+                <option value="50">Moyen</option>
+                <option value="25">Rapide</option>
+            </select>
+            <button id="restartBtn">Recommencer</button>
+        </div>
+    </div>
+    <script src="jeu.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #461f4f; /* Fond mauve */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: white;
+}
+
+#game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#gameCanvas {
+    border: 2px solid white;
+}
+
+#gameInfo {
+    margin-top: 20px;
+    text-align: center;
+}
+
+button {
+    background-color: #ff69b4; /* Rose clair pour le bouton */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    border-radius: 50px;
+}
+
+button:hover {
+    background-color: #ff1493;
+   
+}
+
+select {
+    padding: 5px;
+    font-size: 16px;
+}
