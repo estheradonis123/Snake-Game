@@ -133,7 +133,6 @@ function updateGame() {
     moveSnake(); // Déplace le serpent
 }
 
-
 // Fonction pour redémarrer le jeu
 function restartGame() {
     snake = [{x: 150, y: 150}];
@@ -160,6 +159,18 @@ document.getElementById('rightBtn').addEventListener('click', function() {
     if (direction !== 'left') direction = 'right';
 });
 
+// Écoute des touches du clavier
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'ArrowUp' && direction !== 'down') {
+        direction = 'up';
+    } else if (event.key === 'ArrowDown' && direction !== 'up') {
+        direction = 'down';
+    } else if (event.key === 'ArrowLeft' && direction !== 'right') {
+        direction = 'left';
+    } else if (event.key === 'ArrowRight' && direction !== 'left') {
+        direction = 'right';
+    }
+});
 
 // Mise à jour de la vitesse du jeu
 document.getElementById('speed').addEventListener('change', function() {
